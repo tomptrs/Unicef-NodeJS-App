@@ -1,0 +1,77 @@
+<section ng-controller="LessenController">
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/BeheerLessen">Beheer Lessen</a>
+     </div>
+      <div id="myNavbar" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav navbar-right">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>{{ leerkracht.firstname}}<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><button class="buttonPassword"  ng-bootbox-title="Wijzig je Wachtwoord"  ng-bootbox-custom-dialog  ng-bootbox-custom-dialog-template="views/DialogPassword.html">
+                    wachtwoord wijzigen</button></li>
+              </ul>
+            </li>
+                  <li><a logout href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log uit</a></li>
+            </ul>
+      </div>
+      </div>
+  </nav>
+   <div growl></div>
+
+
+   <div class="table-responsive">
+       <table class="table table-hover ">
+         <thead>
+           <tr>
+               <th> Naam</th>
+               <th> Aangemaakt</th>
+               <th> Bewerkt</th>
+               <th > Actie</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr ng-repeat="les in leerkracht.lessen">
+               <td>{{ les.naam }}</td>
+               <td>{{ les.aangemaakt }}</td>
+               <td>{{ les.bewerkt }}</td>
+               <td>
+                   <div class="btn-group btn-group-sm" role="group">
+                     <button ng-click="startLes(les._id)" class="btn btn-success" ng-bootbox-title="{{les.naam}}" ng-bootbox-custom-dialog="{{les.token}}" ng-bootbox-buttons="customButtonPlay">
+                   <i class="glyphicon glyphicon-play"> </i>
+                 </button>
+                  <button ng-click="bewerkLes(les._id)" class="btn btn-warning">
+                     <i class="glyphicon glyphicon-pencil"> </i>
+                  </button>
+                   <button ng-click="downloadLes(les._id,les.naam)" class="btn btn-info">
+                     <i class="glyphicon glyphicon-download-alt"> </i>
+                  </button>
+                  <button class="btn btn-danger" ng-click="giveID(les._id)" ng-bootbox-title="{{les.naam}}" ng-bootbox-custom-dialog="Ben je zeker dat je deze les wil verwijderen?" ng-bootbox-buttons="customButtonDelete">
+                     <i class="glyphicon glyphicon-remove"> </i>
+                  </button>
+                </div>
+              </td>
+
+           </tr>
+         </tbody>
+         <tfoot>
+           <tr>
+               <td colspan="2" >
+                 <div class="col-xs-4">
+                      <input class="form-control" type="text" ng-model="naam" />
+                  </div></td>
+               <td>  </td>
+               <td><button ng-click="addLes()" class="btn btn-primary btn-sm"> Voeg toe</button></td>
+             </tr>
+           </tfoot>
+</table>
+</div>
+
+</section>

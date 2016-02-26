@@ -1,0 +1,25 @@
+<section  ng-controller="LeerkrachtPresentatieController">
+
+
+    <button ng-click="stopLes(les._id)" class="btn btn-danger">Stop Les</button>
+    <button ng-click="ActiveerVraag()" class="btn btn-primary">Activeer Vraag</button>
+    <h1>{{les.naam}} </h1>
+    <div><b>Token</b>: {{les.token}}</div
+        
+    <div class="slider">
+
+   <!--  <slick settings="slickConfig" ng-if="vragen.length" data="vragen" >
+
+        <div ng-repeat="vraag in vragen"  >
+             <div ng-include src="template.url"></div>
+            
+         </div>
+         
+   </slick> -->
+        
+         <div ng-include src="template.url"></div>
+        <button class="btn btn-primary" ng-click="Vorige()">Vorige</button>
+        <button class="btn btn-primary" ng-click="Volgende()">Volgende</button>
+
+ </div>
+</section>

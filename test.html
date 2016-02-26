@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+
+    <script>
+    
+        
+        function IetsDoen(){
+            var tekstveld= document.getElementById("tekst");
+            console.log(tekstveld.value);
+            
+            document.getElementById("rood").innerHTML = tekstveld.value;
+            var eenKleur = document.getElementById("kleur").value;
+            document.getElementById("rood").style = "color:"+eenKleur;
+        }
+        
+        function test(element){
+            console.log(element);
+            element.innerHTML = "hallo";
+            
+        }
+        function testForm(){
+           
+            document.mijnForm.tekst.value= "Tom Peeters";
+        }
+        
+        function Selectie(){
+            var str="";
+            for(var i=0;i<document.tomForm.mijnRadio.length;i++){
+                if(document.tomForm.mijnRadio[i].checked == true){
+                    str+= document.tomForm.mijnRadio[i].value;
+                }
+            }
+            alert(str);
+        }
+    </script>
+    </head>
+    
+<body>
+    
+<form name="mijnForm">
+    <input type="text" name="tekst">
+    <input type="email">
+    <input type="submit" onclick="testForm()">
+    
+</form>
+    
+    <form name="tomForm">
+    <input type="checkbox" name="groen" checked="true">Groen
+        <input type="checkbox" name="rood">rood
+        <input type="checkbox" name="blauw">blauw
+        <input type="radio" name="mijnRadio" value="1">1
+        <input type="radio" name="mijnRadio" value="2">2
+        <input type="radio" name="mijnRadio" value="3">3
+        <input type="radio" name="mijnRadio" value="4">4
+        
+        <input type="button" onclick="Selectie()">
+        
+    </form>
+    
+    <script>
+        function sel(){
+            var str= document.selectie.x.options[document.selectie.x.selectedIndex].value;
+            alert(str);
+        }
+    </script>
+    <form name="selectie">
+    <select name="x">
+        <option value="1">een</option>
+        <option value="2">twee</option>
+        </select>
+        <input type="button" onclick="sel()">
+    </form>
+
+    
+    
+    
+    
+    
+    <p class="test"></p>
+    
+    <form action="test.php" method="get">
+        
+        <label for="tom">Naam:</label>
+        <input type="text" name="tom">
+        
+        <input type="submit">
+    </form>
+    
+    http://localhost:80?tom:blabla
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+</html>

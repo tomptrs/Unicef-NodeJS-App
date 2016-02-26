@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="jquery.min.js"></script>
+      <script src="sketch.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    
+    <script>
+    
+        var app = angular.module("app",[]);
+        app.controller("student_drawing_controller",function($scope){
+            
+             var init = function() {
+                 alert();
+        //TODO check if the server send this request for drawing otherwise return to loading screen.
+
+        console.log('student_drawing_controller started');
+        jQuery( document ).ready(function( $ ) {
+            $('#colors_sketch').sketch();
+        });
+    };
+
+    /*
+    Stap4: Scope vars
+    ------------------
+    */
+    $scope.sizes = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+    $scope.size = 5;
+ 
+    /* Stap5: Scope functions
+    -------------------------
+    */
+
+    $scope.ClearCanvas = function () {
+        var tmp = $('#colors_sketch').sketch();//.prototype.clearPainting();
+        tmp.actions = [];
+        tmp.redraw();
+        console.log("cleared Canvas");        
+    };
+    $scope.resize = function () {
+        var tmp = $('#colors_sketch').sketch();//.prototype.clearPainting();
+        tmp.size=$scope.size;
+    }
+    
+
+    /* Stap6: init aanroepen
+    --------------------
+    */
+    init();
+            
+        });
+        
+    </script>
+</head>
+<body ng-app="app">
+    
+    <div ng-controller="student_drawing_controller" style="width:100%;height:100%;position: fixed;overflow-y: scroll;display:block;" class="mainbox col-md-12 col-md-offset-0 col-sm-8">
+   
+        <canvas id="colors_sketch" style="width:100%;height:400px;border:1px solid black"></canvas>
+  
+      <div class="btn-group unselectable" role="group" aria-label="..." style="position:absolute;">
+        <a href='#colors_sketch' type="button" class="btn btn-default" data-tool="marker" data-color="#2E2E2E">Zwart</a>
+        <a href='#colors_sketch' type="button" class="btn btn-primary" data-tool="marker" data-color="#003366">Blauw</a>
+        <a href='#colors_sketch' type="button" class="btn btn-success" data-tool="marker" data-color="#00CC66">Groen</a>
+        <a href='#colors_sketch' type="button" class="btn btn-info" data-tool="marker" data-color="#2ECCFA">Blauw</a>
+        <a href='#colors_sketch' type="button" class="btn btn-warning" data-tool="marker" data-color="#FF9933">Geel</a>
+        <a href='#colors_sketch' type="button" class="btn btn-danger" data-tool="marker" data-color="#FF0000">Rood</a>
+        <a href='#colors_sketch' type="button" class="btn btn-danger" data-tool="eraser"><i class="fa fa-eraser"></i>Wissen</a>
+        <div>
+            <button confirmed-click="SavePicture()" ng-confirm-click="Wil je de tekening verzenden?" type="button" class="btn btn-primary">Tekening versturen</button>
+            <button confirmed-click="ClearCanvas()" ng-confirm-click="Tekening verwijderen?" type="button" class="btn btn-danger">Wissen</button>
+        </div>
+
+        <div>
+            <select class="form-control" ng-model="size" ng-options="size for size in sizes" ng-click="resize()">
+                Selecteer Penseeldikte
+            </select>
+        </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="..." style="position:absolute; bottom: 5%;">
+       </div>
+</div>
+
+
+
+</body>
+</html>

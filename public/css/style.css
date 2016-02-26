@@ -1,0 +1,65 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  margin-bottom: 60px;
+  height:100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+    background:white;
+    font-family: 'Fjalla One', sans-serif;
+
+}
+
+
+.footer {
+  position: absolute;
+     z-index: 1;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+
+}
+.footer:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:url("/img/FooterImg.png");
+    background-repeat: repeat-x;
+    opacity: .3;
+}
+
+.container {
+  width: 70%;
+  padding: 0 15px;
+}
+.container .text-footer {
+  margin: 20px 0;
+   text-align: center;
+   color: black;
+}
+
+.login-form-bg{
+  background-color: white;
+  border: 15px solid;
+  border-radius: 15px;
+  border-color: white;
+  margin-top: 50px;
+
+}
+
+.buttonPassword{
+  background: transparent;
+  border: none !important;
+}
+.slider{
+  width:60%;
+  text-align: center
+}

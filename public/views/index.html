@@ -1,0 +1,92 @@
+<!-- public/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base href="/">
+
+    <title>Starter Node and Angular</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+    <link rel="stylesheet" href="libs/jqcloud2/dist/jqcloud.min.css"><!--voor word cloud-->
+    <link rel="stylesheet" href="libs/slick-carousel/slick/slick.css"><!--voor slider-->
+   <link rel="stylesheet" href="libs/slick-carousel/slick/slick-theme.css"><!--voor slider-->
+
+
+
+    <!-- JS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <script src="libs/jqcloud2/dist/jqcloud.min.js"></script><!--voor word cloud-->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/sketch/sketch.min.js"></script>
+
+
+    <script src="libs/angular-jqcloud/angular-jqcloud.js"></script><!--voor word cloud-->
+    <script src="libs/slick-carousel/slick/slick.js"></script><!--voor slider-->
+    <script src="libs/angular-slick-carousel/dist/angular-slick.min.js"></script><!--voor slider-->
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/bootbox/bootbox.js"></script> <!--alert-->
+    <script src="libs/ngBootbox/dist/ngBootbox.min.js"></script><!--alert-->
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="factories/httpInterceptor.js"></script>
+    <script src="directives/common.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="modules/growl.js"></script>
+    
+    <!-- SERVICES -->
+    <script src="js/Service/PollService.js"></script>
+
+    <!--CONTROLLERS-->
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/LeerkrachtCtrl.js"></script>
+    <script src="js/controllers/LessenCtrl.js"></script>
+    <script src="js/controllers/LeerlingCtrl.js"></script>
+    <script src="js/controllers/SignupCtrl.js"></script>
+    <script src="js/controllers/VragenCtrl.js"></script>
+    <script src="js/controllers/BewerkVragenCtrl.js"></script>
+    <script src="js/controllers/LeerkrachtPresentatieCtrl.js"></script>
+    <script src="js/controllers/LeerkrachtPresentatie/LeerkrachtPresentatieCloudCtrl.js"></script>
+    <script src="js/controllers/LeerkrachtPresentatie/LeerkrachtPresentatieMultiCtrl.js"></script>
+    <script src="js/controllers/LeerkrachtPresentatie/LeerkrachtPresentatieOpenCtrl.js"></script>
+    <script src="js/controllers/LeerkrachtPresentatie/LeerkrachtPresentatieTekenController.js"></script>
+    <script src="js/controllers/LeerlingPresentatieCtrl.js"></script>
+    <script src="js/controllers/LeerlingPresentatie/LeerlingPresentatieCloudCtrl.js"></script>
+    <script src="js/controllers/LeerlingPresentatie/LeerlingPresentatieMultiCtrl.js"></script>
+    <script src="js/controllers/LeerlingPresentatie/LeerlingPresentatieOpenCtrl.js"></script>
+    
+    <script src="js/controllers/PasswordCtrl.js"></script>
+    <script src="js/controllers/ForgotCtrl.js"></script>
+    <script src="js/controllers/ResetCtrl.js"></script>
+    <!-- TOM Sketch -->
+    <script src="js/controllers/LeerlingPresentatie/LeerlingDrawingController.js"></script>
+   
+    <!-- Google font -->
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    
+   
+
+
+</head>
+<body ng-app="EenBordVolRechten" >
+<div class="container">
+    <!-- ANGULAR DYNAMIC CONTENT -->
+    <div ng-view></div>
+
+</div>
+
+
+<footer class="footer">
+     <div class="container">
+       <p class="text-footer">EenBordVolRechten</p>
+     </div>
+   </footer>
+
+</body>
+</html>

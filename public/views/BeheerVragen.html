@@ -1,0 +1,92 @@
+<section ng-controller="VragenController" >
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/BeheerLessen">Beheer Lessen</a>
+     </div>
+       <div id="myNavbar" class="collapse navbar-collapse">
+           <ul class="nav navbar-nav navbar-right">
+             <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>{{ leerkrachtNaam}}<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><button class="buttonPassword"  ng-bootbox-title="Wijzig je Wachtwoord"  ng-bootbox-custom-dialog  ng-bootbox-custom-dialog-template="views/DialogPassword.html">
+                      wachtwoord wijzigen</button></li>
+                </ul>
+              </li>
+                  <li><a logout href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log uit</a></li>
+              </ul>
+      </div>
+      </div>
+  </nav>
+
+  <form class="form-inline">
+<div class="form-group">
+  <label>Les naam</label>
+  <input type="text" class="form-control" ng-model= "newLes">
+</div>
+<button ng-click="editLes()" class="btn btn-default btn-sm">Bewaar nieuwe les naam </button>
+</form>
+
+
+    <div growl></div>
+
+   <div class="table-responsive">
+       <table class="table table-hover ">
+         <thead>
+           <tr>
+               <th> Naam</th>
+               <th> Soort</th>
+               <th> Aangemaakt</th>
+               <th > Actie</th>
+           </tr>
+         </thead>
+         <tbody>
+
+           <tr ng-repeat="vraag in les.vragen">
+               <td>{{ vraag.vraag }}</td>
+               <td>{{ vraag.soort }}</td>
+               <td>{{ vraag.aangemaakt }}</td>
+               <td>
+                   <div class="btn-group btn-group-sm" role="group">
+
+                  <button ng-click="bewerkVraag(vraag._id)" class="btn btn-warning">
+                     <i class="glyphicon glyphicon-pencil"> </i>
+                  </button>
+
+                  <button  class="btn btn-danger" ng-click="giveID(vraag._id)" ng-bootbox-title="{{vraag.vraag}}" ng-bootbox-custom-dialog="Ben je zeker dat je deze vraag wil verwijderen?" ng-bootbox-buttons="customButtonDelete">
+                     <i class="glyphicon glyphicon-remove"> </i>
+                  </button>
+                </div>
+              </td>
+
+           </tr>
+         </tbody>
+         <tfoot>
+           <tr>
+               <td >
+                 <div class="col-xs-4">
+                    <input class="form-control" type="text" ng-model="vraag" />
+                  </div></td>
+               <td colspan="2">
+                 <select class="form-control" id="VraagSoort">
+                    <option value="" disabled selected>Soort</option>
+                    <option value="open" >Open</option>
+                    <option value="meerkeuze">Meerkeuze</option>
+                    <option value="cloud">Cloud</option>
+                    <option value="teken">Tekenen</option>
+                 </select>
+                </td>
+
+               <td><button ng-click="addVraag()" class="btn btn-default btn-sm"> Voeg toe</button></td>
+             </tr>
+           </tfoot>
+</table>
+</div>
+
+</section>
