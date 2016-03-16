@@ -68,6 +68,7 @@ var models = require('../models/leerkracht');
 
 
     app.post('/InlogLeerling', function(req, res, next) {
+        
           models.Les.findOne({token: req.body.token}, function(err,les)
           {
                 if (err)
@@ -77,7 +78,9 @@ var models = require('../models/leerkracht');
                 else if (!les)
                 {
                     return res.json({ error: 'Geen les met deze token gevonden' });
-                }else{
+                }
+              
+                    else{
                       req.session.lesID=les._id;
                       req.session.leerkrachtID=les.leerkrachtID;
                       models.Leerkracht.findById(les.leerkrachtID,function(err,leerkracht)

@@ -1,17 +1,22 @@
 <section  ng-controller="LeerkrachtPresentatieMultiController">
+  
+  <button ng-click="getAnswers()" class="btn btn-default btn-sm">Toon antwoorden</button>
+ <button ng-click="remove()" class="btn btn-default btn-sm">Verwijder antwoorden Anwsers</button>
+
+  
    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 login-form-bg">
   <h1>{{vraag.vraag}}</h1>
-Multi
+
+       <canvas id="myChart" width="400" height="400"></canvas>
+       
 <div ng-show="video" >
  <!-- 4:3 aspect ratio -->
  <div class="embed-responsive embed-responsive-4by3">
    <iframe class="embed-responsive-item" src="{{trustSrc(vraag.video)}}"></iframe>
  </div>
 </div>
-
-
     <div ng-show="afbeelding" >
-   <img scr="{{vraag.afbeelding}}" width="auto" height="auto" >
+   <img scr="{{vraag.afbeelding}}" >
   </div>
 
     <div class="form-group">
@@ -19,7 +24,13 @@ Multi
           {{result.opl}}
         {{result.aantal}}
       </div>
-      <button ng-click="getAnswers()" class="btn btn-default btn-sm">Get Anwsers</button>
+      
+     
+     
     </div>
   </div>
+  
+  
+
+    
 </section>

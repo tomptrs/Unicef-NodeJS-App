@@ -1,6 +1,7 @@
 angular.module('LeerlingCtrl', []).controller('LeerlingController',  ['$http',"$rootScope", '$scope','PollService', function($http, $rootScope, $scope,PollService) {
 var code;
-  $scope.InlogLeerling = function() {
+  
+    $scope.InlogLeerling = function() {
       code = this.token;
      
       

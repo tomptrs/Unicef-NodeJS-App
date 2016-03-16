@@ -10,6 +10,6 @@ angular.module('LeerlingPresentatieCloudCtrl', []).controller('LeerlingPresentat
           });
 
   };
-document.body.style.background = "#F4FA58"
+//document.body.style.background = "#F4FA58"
 
 }]);

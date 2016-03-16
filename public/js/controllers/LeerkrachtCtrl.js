@@ -2,6 +2,8 @@
 
 
 angular.module('LeerkrachtCtrl', []).controller('LeerkrachtController', ['$http',"$rootScope", '$scope', function($http, $rootScope, $scope) {
+    
+    
   $scope.login = function() {
             $http
                 .post('/InlogLeerkracht', {
@@ -13,7 +15,7 @@ angular.module('LeerkrachtCtrl', []).controller('LeerkrachtController', ['$http'
                 });
         }
 
-        document.body.style.background = "#D8D8D8 url('../img/Achtergrond.png') no-repeat right top"
+       // document.body.style.background = "#D8D8D8 url('../img/Achtergrond.png') no-repeat right top"
 
 
 

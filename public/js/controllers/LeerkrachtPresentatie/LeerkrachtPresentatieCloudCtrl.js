@@ -2,6 +2,23 @@ angular.module('LeerkrachtPresentatieCloudCtrl', []).controller('LeerkrachtPrese
  $scope.words = [];
 
 
+      $scope.remove=function(){
+          
+       console.log("ID - cloud" + $scope.lesID);
+    $http
+        .post('/removeAntwoord',{
+          antwoord:null,
+          vraagID:$scope.vraag._id,
+           lesID: $scope.lesID
+            })
+        .success(function(data) {
+        console.log("removed data..");
+        console.log(data);
+            $scope.antwoord =null;
+          });
+
+  };
+    
  //generates number between 5 and 15
  $scope.getRandomSpan = function(){
          return Math.floor((Math.random()*13)+1);

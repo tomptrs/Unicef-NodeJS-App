@@ -63,6 +63,58 @@ var fs = require('fs');
 
                              });
                        });
+        
+                    //REMOVE ANTWOORDEN ================================================
+                        app.get("/api/AntwoordRemove/:les_id/:vraag_id",isLoggedIn,function(req,res){
+                            
+                            console.log("vraagid " + req.params.vraag_id);
+                             console.log("lesid " + req.params.les_id);
+                              models.Leerkracht.findById(req.user._id, function(err, leerkracht){
+                                        var  vraag=leerkracht.lessen.id(req.params.les_id).vragen.id(req.params.vraag_id);
+                                         console.log("getting antwoord data for removing...");
+                                        
+                                    console.log(vraag);
+                                  
+                                  for(var i=0;i<vraag.antwoorden.length;i++){
+                                     console.log("removing antwoord: "+ vraag.antwoorden[i]._id);
+                                      //Remove elk antwoord die voor deze vraag is gegeven
+                                      models.Antwoord.remove({_id:vraag.antwoorden._id},function(err,todo){
+                                          if(err)
+                                              {
+                                                  console.log("error");
+                                                  console.log(err);
+                                              }
+                                          else{
+                                              console.log(todo);
+                                          }
+                                      });
+                                      
+                                     
+                                     
+                                  }
+
+                                         return res.json("");
+
+
+                                       });
+                            
+                            /*
+                             User.remove({
+            voornaam : req.params.voornaam
+        }, function(err, todo) {
+            if (err)
+                res.send(err);
+            // get and return all the todos after you create another
+            User.find(function(err, users) {
+                if (err)
+                    res.send(err)
+                res.json(users);
+            });
+        });
+                            */
+                            
+                        });
+        
 
                        //GET ANTWOORDEN ================================================
 

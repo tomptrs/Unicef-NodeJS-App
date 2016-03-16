@@ -4,6 +4,7 @@ angular.module('LeerlingPresentatieOpenCtrl', []).controller('LeerlingPresentati
     
 $scope.addAntwoord=function(){
     
+    console.log(this.antwoord);
     
   $http
   .post('/addAntwoord',{
@@ -15,5 +16,5 @@ $scope.addAntwoord=function(){
       });
 
 };
-document.body.style.background = "#F4FA58 "
+//document.body.style.background = "#F4FA58 "
 }]);

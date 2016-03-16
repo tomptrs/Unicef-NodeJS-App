@@ -8,6 +8,32 @@ angular.module('LeerkrachtPresentatieOpenCtrl', []).controller('LeerkrachtPresen
             console.log($scope.antwoorden);
         });
       };
+    
+    
+    /*
+    remove vraag
+    */
+  /*  $scope.remove = function(){
+        $http.get('/api/AntwoordRemove/' + $scope.lesID +'/' + $scope.vraag._id )
+            .success(function(data) {
+     
+                console.log(data);
+        });
+    };*/
+    
+    $scope.remove=function(){
+       console.log("ID" + $scope.leerkrachtID);
+    $http
+        .post('/removeAntwoord',{
+          antwoord:null,
+          vraagID:$scope.vraag._id,
+           lesID: $scope.lesID
+            })
+        .success(function(data) {
+            $scope.antwoord =null;
+          });
+
+  };
 
       //check of er video of image is
       if($scope.vraag.video!=null)

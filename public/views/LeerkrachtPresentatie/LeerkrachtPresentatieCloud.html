@@ -1,8 +1,13 @@
 <section  ng-controller="LeerkrachtPresentatieCloudController">
+
+<button ng-click="getAnswers()" class="btn btn-default btn-sm">Toon antwoorden</button>
+<button ng-click="remove()" class="btn btn-default btn-sm">Verwijder antwoorden Anwsers</button>
+
+
  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 login-form-bg">
   <h1>{{vraag.vraag}}</h1>
 
     <jqcloud words="words" width="200" height="200" steps="7"></jqcloud>
-    <button ng-click="getAnswers()" class="btn btn-default btn-sm">Get Anwsers</button>
+  
   <div>
 </section>

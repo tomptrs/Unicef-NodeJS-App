@@ -13,6 +13,20 @@ angular.module('LeerkrachtPresentatieTekenCtrl', []).controller('LeerkrachtPrese
     });
   $scope.imgdata = "http://localhost:8080/testLes/out2.png";
   };
+    
+      $scope.remove=function(){
+       console.log("ID" + $scope.leerkrachtID);
+    $http
+        .post('/removeAntwoord',{
+          antwoord:null,
+          vraagID:$scope.vraag._id,
+           lesID: $scope.lesID
+            })
+        .success(function(data) {
+            $scope.antwoord =null;
+          });
+
+  };
 
       //check of er video of image is
       if($scope.vraag.video!=null)

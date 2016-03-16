@@ -73,7 +73,7 @@ var Oplossing = mongoose.model('Oplossing', oplossingSchema);
 
 // module.exports allows us to pass this to other files when it is called
 module.exports ={
-  Leerkracht: Leerkracht,
+    Leerkracht: Leerkracht,
     Les: Les,
     Vraag: Vraag,
     Antwoord:Antwoord,
