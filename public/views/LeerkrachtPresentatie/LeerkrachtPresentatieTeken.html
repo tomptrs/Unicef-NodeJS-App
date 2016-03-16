@@ -9,11 +9,10 @@
   <h1>{{vraag.vraag}}</h1>
 
    
-    <button ng-click="getAnswers()" class="btn btn-default btn-sm">Get Anwsers</button>
-     {{les}}
+   <!-- <button ng-click="getAnswers()" class="btn btn-default btn-sm">Get Anwsers</button>-->
+     
     <ul>
-    <li ng-repeat="x in afbeeldingen">
-      
+    <li ng-repeat="x in afbeeldingen">      
         <img ng-src="{{directory}}/{{x}}" />
     </li>
   </ul>

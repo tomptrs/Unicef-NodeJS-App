@@ -1,4 +1,5 @@
 var fs      = require('fs');
+var fse = require('fs-extra');
 
 var models = require('../models/leerkracht');
     module.exports = function(app, passport) {
@@ -180,6 +181,27 @@ var models = require('../models/leerkracht');
                 console.log("in AddDrawing functino");
                 console.log(err);
                 });
+
+    });
+        
+         //Remove Tekeningen
+        app.post('/removeDrawing', function(req, res, next) {
+            console.log('in remove drawing method');
+           
+           console.log(req.body.lesID);
+            
+            //random getal om afbeelding in op te slaan..
+           
+            //Stuur les door en maak een directory voor de afbeelding
+            var dir = './public/pics/'+req.body.lesID;
+            fse.remove(dir, function (err) {
+                if (err) return console.error(err)
+ 
+                    console.log('success removing '+ dir +' !');
+                });
+
+              
+            
 
     });
         

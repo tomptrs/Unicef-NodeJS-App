@@ -10,10 +10,10 @@ angular.module('LeerkrachtPresentatieCtrl', []) .config(['slickCarouselConfig', 
   $scope.vragen=[];
   $scope.currentVraag=0;
   $scope.teller=0;
-      $scope.max=0;
-
-
+  $scope.max=0;
   $scope.lesID = $routeParams.lesID;
+    
+    
   $http.get('/api/LessenData/' + $scope.lesID)
       .success(function(data) {
       
@@ -22,13 +22,11 @@ angular.module('LeerkrachtPresentatieCtrl', []) .config(['slickCarouselConfig', 
          
           $scope.les = data; //Expose the user data to your angular scope
           $scope.vragen=data.vragen;
-         $scope.max = $scope.vragen.length;
-
-
-
-            //alert(data.token);
+          $scope.max = $scope.vragen.length;
+      
+      
           if($scope.vragen[0].soort=="open"){
-            console.log("open");
+               console.log("open");
                $scope.template = $scope.templates[0];
               
            }
@@ -144,6 +142,8 @@ angular.module('LeerkrachtPresentatieCtrl', []) .config(['slickCarouselConfig', 
           
           console.log("volgende vraag");
           $scope.teller++;
+             console.log($scope.teller);
+             
           if($scope.teller < $scope.max){
                 $scope.currentVraag=$scope.teller;
                 $scope.vraag = $scope.vragen[$scope.teller]

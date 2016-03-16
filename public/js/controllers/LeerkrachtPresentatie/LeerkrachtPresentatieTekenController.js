@@ -3,7 +3,11 @@ angular.module('LeerkrachtPresentatieTekenCtrl', []).controller('LeerkrachtPrese
 
   $scope.les = $scope.lesID;
     $scope.directory = "http://localhost:8080/pics/"+$scope.lesID;
-  $scope.getAnswers=function(){
+  
+    /*
+    GET DRAWINGS FROM SERVER
+    */
+    $scope.getAnswers=function(){
     
     $http.get('/api/AntwoordDataTeken/' + $scope.lesID +'/' + $scope.vraag._id + "/"+$scope.lesID)
         .success(function(data) {
@@ -14,10 +18,13 @@ angular.module('LeerkrachtPresentatieTekenCtrl', []).controller('LeerkrachtPrese
   $scope.imgdata = "http://localhost:8080/testLes/out2.png";
   };
     
+    /*
+    REMOVING DRAWINGS
+    */
       $scope.remove=function(){
        console.log("ID" + $scope.leerkrachtID);
     $http
-        .post('/removeAntwoord',{
+        .post('/removeDrawing',{
           antwoord:null,
           vraagID:$scope.vraag._id,
            lesID: $scope.lesID
