@@ -1,6 +1,7 @@
 angular.module('LeerlingPresentatieOpenCtrl', []).controller('LeerlingPresentatieOpenController', ['$http', '$scope', '$routeParams','$location', function($http, $scope, $routeParams,$location)  {
     
     console.log($scope.vragen[0]);
+    $scope.send = false;
     
 $scope.addAntwoord=function(){
     
@@ -13,6 +14,7 @@ $scope.addAntwoord=function(){
     })
     .success(function(data) {
         $scope.antwoord =null;
+      $scope.send = true;
       });
 
 };

@@ -130,6 +130,9 @@ angular.module('LeerlingPresentatieCtrl', []).config(['slickCarouselConfig', fun
                 
            
           }
+           else{
+               $scope.teller--;
+           }
       }
        
        
@@ -170,6 +173,9 @@ angular.module('LeerlingPresentatieCtrl', []).config(['slickCarouselConfig', fun
                 
            
           }
+            else{
+                $scope.teller++;
+            }
       }
 
       
