@@ -142,8 +142,9 @@ angular.module('LeerkrachtPresentatieCtrl', []) .config(['slickCarouselConfig', 
           
           console.log("volgende vraag");
           $scope.teller++;
+             console.log("DE TELLER");
              console.log($scope.teller);
-             
+             console.log("max = " + $scope.max);
           if($scope.teller < $scope.max){
                 $scope.currentVraag=$scope.teller;
                 $scope.vraag = $scope.vragen[$scope.teller]
@@ -169,6 +170,7 @@ angular.module('LeerkrachtPresentatieCtrl', []) .config(['slickCarouselConfig', 
                     console.log($scope.template);
              }
               else{
+                  
               // $scope.$apply(function () {
                   $scope.template = $scope.templates[1];
                 // });
@@ -176,6 +178,10 @@ angular.module('LeerkrachtPresentatieCtrl', []) .config(['slickCarouselConfig', 
              }              
            
           }
+             else{
+                
+                 $scope.teller--;
+             }
       }
          
          
@@ -217,6 +223,9 @@ angular.module('LeerkrachtPresentatieCtrl', []) .config(['slickCarouselConfig', 
                 
            
           }
+            else{
+                $scope.teller++;
+            }
       }
 
 
