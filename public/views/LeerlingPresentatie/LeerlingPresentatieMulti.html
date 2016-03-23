@@ -6,7 +6,7 @@
       <div class="form-group"  >
 
         <h1>{{vraag.vraag}}</h1>
-          <label>multi</label>
+          <label></label>
           <div ng-repeat="opl in vraag.oplossingen" >
             <input class="form-control" type="radio" ng-model="$parent.antwoord" name="oplossingen" value="{{opl.oplossing}}" >{{opl.oplossing}}
           </div>
