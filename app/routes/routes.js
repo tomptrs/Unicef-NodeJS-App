@@ -21,10 +21,19 @@ var fs = require('fs');
                 app.get('/api/LessenDataLeerling/:les_id', function(req, res) {
 
                     models.Leerkracht.findById(req.session.leerkrachtID, function(err, leerkracht){
-                          var les=leerkracht.lessen.id(req.params.les_id);
-
+                          
+                        
+                        var les=leerkracht.lessen.id(req.params.les_id);
+                        if(les != null)
+                            {
+                                
+                            }
+                        else
+                            {
+                                les ="";
+                                
+                            }
                         return res.json(les);
-
 
                           });
                     });
@@ -32,8 +41,11 @@ var fs = require('fs');
 
           app.get('/leerlingdata', function(req, res) {
 
-
+                if(req.session !=null)
                   return res.json(req.session);
+              
+              
+                  
 
               });
 
