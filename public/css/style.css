@@ -55,6 +55,7 @@ body{
   background-repeat: no-repeat;
   background-position: center bottom;
  /* background: #009fe3;*/
+    background:white !important;
   font-family: 'Fjalla One', sans-serif;
 /*  color:white;*/
 }
