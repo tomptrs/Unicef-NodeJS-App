@@ -22,7 +22,7 @@ var fs = require('fs');
 
                     models.Leerkracht.findById(req.session.leerkrachtID, function(err, leerkracht){
                           
-                        if(leerkrach.lessen !=null){
+                        if(leerkracht.lessen !=null){
                         var les=leerkracht.lessen.id(req.params.les_id);
                         if(les != null)
                             {
