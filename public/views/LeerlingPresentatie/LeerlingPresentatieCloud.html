@@ -8,8 +8,11 @@
    <h1>{{vraag.vraag}} :</h1>
  
       
-  <input type="text" class="form-control" ng-model="antwoord">
-  <button ng-click="addAntwoord()" class="btn btn-default btn-sm"> Voeg toe</button>
+  <!-- <input type="text" class="form-control" ng-model="antwoord">-->
+  <TextArea ng-model="antwoord" style="width:100%; height:200px">
+      
+  </TextArea>
+  <button ng-click="addAntwoord()" class="btn btn-default btn-sm"> Antwoord verzenden</button>
   </div>
   </form>
   </div>

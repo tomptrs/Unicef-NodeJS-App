@@ -7,11 +7,28 @@
    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 login-form-bg">
   <h1 class="hoofdingh1">{{vraag.vraag}}</h1>
 
+       <div ng-repeat="opl in vraag.oplossingen" >
+           
+             <input style="display:block;" class="form-control" type="radio" ng-model="$parent.antwoord" name="oplossingen" value="tom" ><label>{{opl.oplossing}}</label>
+       </div>
+          
       
- <div class="row">      
+ <div class="row">  
+     
+     <div class="ol-xs-12 col-sm-offset-2 col-sm-6 col-md-4 col-lg-6">
  <canvas id="myChart" width="400" height="400"></canvas>
-
-     <div ng-show="video" >
+    
+    </div>
+    
+     <div class="form-group ol-xs-12 col-sm-offset-2 col-sm-6 col-md-8 col-lg-6">
+      <div ng-repeat="result in results">
+          {{result.opl}}
+        {{result.aantal}}
+      </div>
+    </div>  
+    
+      <div ng-show="video" class="ol-xs-12 col-sm-offset-2 col-sm-6 col-md-6 col-lg-6">
+ 
  <!-- 4:3 aspect ratio -->
  <div class="embed-responsive embed-responsive-4by3">
    <iframe class="embed-responsive-item" allowfullscreen="allowfullscreen" src="{{trustSrc(vraag.video)}}"></iframe>
@@ -22,13 +39,7 @@
    <img scr="{{vraag.afbeelding}}" >
   </div>
 
-    <div class="form-group">
-      <div ng-repeat="result in results">
-          {{result.opl}}
-        {{result.aantal}}
-      </div>
-    </div>
-    
+     
     
      
   </div>
@@ -46,7 +57,7 @@
         Ben je zeker dat je de antwoorden wil verwijderen?
       </div>
       <div class="modal-footer">
-        <button type="button" ng-click="remove()" class="btn btn-primary" data-dismiss="modal">Nee</button>
+        <button type="button" ng-click="remove()" class="btn btn-default" data-dismiss="modal">Nee</button>
         <button type="button" ng-click="remove()" class="btn btn-danger" data-dismiss="modal">Ja</button>
       </div>
     </div>
