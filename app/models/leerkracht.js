@@ -20,6 +20,7 @@ var oplossingSchema=new Schema({
  var vraagSchema=new Schema({
    vraag : {type : String, required: true,},
    soort: {type : String},
+   isJuist: {type:Boolean}, 
    aangemaakt:  { type: String },
    bewerkt: { type: String },
    antwoorden:[antwoordSchema],

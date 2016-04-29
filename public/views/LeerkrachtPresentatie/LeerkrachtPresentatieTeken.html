@@ -2,7 +2,7 @@
 <section  ng-controller="LeerkrachtPresentatieTekenCtrl">
 
 <button ng-click="getAnswers()" class="btn btn-default btn-sm">Toon antwoorden</button>
-<button ng-click="remove()" class="btn btn-default btn-sm">Verwijder antwoorden Anwsers</button>
+<button  class="btn btn-danger btn-sm"  data-toggle="modal" data-target="#myModal">Verwijder antwoorden Anwsers</button>
 
 
  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 login-form-bg">
@@ -10,14 +10,38 @@
 
    
    <!-- <button ng-click="getAnswers()" class="btn btn-default btn-sm">Get Anwsers</button>-->
-     
+
+ 
+               
     <ul>
     <li ng-repeat="x in afbeeldingen">      
         <img ng-src="{{directory}}/{{x}}" />
     </li>
   </ul>
   
+  
     
      
   <div>
+  
+  
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Verwijder antwoorden</h4>
+      </div>
+      <div class="modal-body">
+        Ben je zeker dat je de antwoorden wil verwijderen?
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="remove()" class="btn btn-primary" data-dismiss="modal">Nee</button>
+        <button type="button" ng-click="remove()" class="btn btn-danger" data-dismiss="modal">Ja</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END MODAL-->
 </section>

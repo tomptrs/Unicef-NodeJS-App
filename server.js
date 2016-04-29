@@ -20,6 +20,7 @@ var async = require('async');
 
 
 var db = require('./config/db');// config files
+console.log(db);
 // configuration ===========================================
 
 // connect to our mongoDB database

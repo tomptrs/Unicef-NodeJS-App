@@ -14,7 +14,7 @@ $scope.addAntwoord=function(){
     })
     .success(function(data) {
         $scope.antwoord =null;
-      $scope.send = true;
+        $scope.send = true; //IF true disable send button!
       });
 
 };

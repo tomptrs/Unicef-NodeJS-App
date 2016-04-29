@@ -52,27 +52,33 @@ angular.module('LeerlingPresentatieCtrl', []).config(['slickCarouselConfig', fun
             console.log('after change');
             
             $scope.currentVraag=currentSlide;
+              
             if($scope.vragen[currentSlide].soort=="open"){
-              $scope.$apply(function () {
+             // $scope.$apply(function () {
                  $scope.template = $scope.templates[0];
-                });
-                    console.log($scope.template);
-             }else if($scope.vragen[currentSlide].soort=="meerkeuze"){
-               $scope.$apply(function () {
+               // });
+                
+                console.log($scope.template);
+             }
+              
+              else if($scope.vragen[currentSlide].soort=="meerkeuze"){
+               //$scope.$apply(function () {
                   $scope.template = $scope.templates[2];
-                 });
+                 //});
                     console.log($scope.template);
              }
+              
               else if($scope.vragen[currentSlide].soort=="teken"){
-               $scope.$apply(function () {
+               //$scope.$apply(function () {
                   $scope.template = $scope.templates[3];
-                 });
+                 //});
                     console.log($scope.template);
              }
+              
               else{
-               $scope.$apply(function () {
+             //  $scope.$apply(function () {
                   $scope.template = $scope.templates[1];
-                 });
+               //  });
                   console.log($scope.template);
              }
           }
@@ -122,9 +128,9 @@ angular.module('LeerlingPresentatieCtrl', []).config(['slickCarouselConfig', fun
                     console.log($scope.template);
              }
               else{
-               $scope.$apply(function () {
+               //$scope.$apply(function () {
                   $scope.template = $scope.templates[1];
-                 });
+                 //});
                   console.log($scope.template);
              }
                 

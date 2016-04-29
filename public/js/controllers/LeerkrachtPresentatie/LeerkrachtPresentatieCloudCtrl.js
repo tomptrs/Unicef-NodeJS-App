@@ -49,6 +49,7 @@ angular.module('LeerkrachtPresentatieCloudCtrl', []).controller('LeerkrachtPrese
                           weight: $scope.getRandomSpan()
                       });
               });
+            console.log("De woorden in de cloud zijn:");
               console.log($scope.words);
             });
           };

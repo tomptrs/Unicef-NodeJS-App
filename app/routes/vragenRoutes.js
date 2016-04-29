@@ -24,7 +24,7 @@ app.post('/addVraag', function(req, res, next) {
     newVraag.bewerkt=todayDate;
     newVraag.soort=req.body.soort;
     newVraag.actief=false;
-
+    
     newVraag.save(function (err){
         if (err) {
           return res.json({ error: 'error saving new vraag' });
@@ -128,7 +128,7 @@ app.post('/addVraag', function(req, res, next) {
 
     //BEWERKANTOORD =============================================
     app.post('/addOplossing', function(req, res, next) {
-
+        console.log(req.body.oplossing);
       if (!req.body.oplossing) {
         return res.json({ error: 'Vul aub een oplossing in' });
     }

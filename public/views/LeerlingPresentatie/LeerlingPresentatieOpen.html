@@ -10,7 +10,10 @@
   
     
    <input type="text" class="form-control" ng-model="antwoord">
-  <button ng-click="addAntwoord()" class="btn btn-default btn-sm"> Voeg toe</button>
+   
+   <!--TODO disable button after sending answer-->
+   <button ng-click="addAntwoord()" ng-disabled="send" class="btn btn-default btn-sm"> Voeg toe </button>
+
 </div>
 
 </form>
