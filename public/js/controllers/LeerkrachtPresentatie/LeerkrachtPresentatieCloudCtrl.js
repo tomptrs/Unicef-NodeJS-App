@@ -21,7 +21,7 @@ angular.module('LeerkrachtPresentatieCloudCtrl', []).controller('LeerkrachtPrese
     
  //generates number between 5 and 15
  $scope.getRandomSpan = function(){
-         return Math.floor((Math.random()*13)+1);
+         return Math.floor((Math.random()*10)+5);
        }
 
       $scope.vraagID=$scope.vraag._id;
@@ -50,7 +50,7 @@ angular.module('LeerkrachtPresentatieCloudCtrl', []).controller('LeerkrachtPrese
                       });
               });
             console.log("De woorden in de cloud zijn:");
-              console.log($scope.words);
+            console.log($scope.words);
             });
           };
 
