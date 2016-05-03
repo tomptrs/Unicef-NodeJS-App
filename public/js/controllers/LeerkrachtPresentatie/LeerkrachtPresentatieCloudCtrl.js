@@ -51,6 +51,10 @@ angular.module('LeerkrachtPresentatieCloudCtrl', []).controller('LeerkrachtPrese
               });
             console.log("De woorden in de cloud zijn:");
             console.log($scope.words);
+            for(var i=0;i<$scope.words.length;i++){
+                console.log("gewicht= " + $scope.words[i].weight + " en het woordje = " + $scope.words[i].text);    
+            }
+            
             });
           };
 
